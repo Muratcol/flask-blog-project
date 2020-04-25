@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+
+{% block body %}
+
+{% if article %}
+<h2>Writer: {{article.author}}</h2>
+<hr>
+<h4>Title: {{article.title}}</h4>
+<hr>
+<h6>Release date: {{article.created_date}}</h6>
+<hr>
+<h5>{{article.content | safe}}</h5>  
+{% else %}
+  
+<div class = 'alert alert-danger'>There is no such a article in database</div>
+{% endif %}
+
+
+  
+{% endblock body %}
+
+

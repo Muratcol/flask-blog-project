@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h3>Articles</h3>
+<form class="form-inline mr-auto" action = "/search" method = "POST">
+    <object align="right"></object>
+    <input class="form-control mr-sm-2" type="text" name = "keyword" placeholder="Search" aria-label="Search">
+    <button class="btn btn-secondary" type="submit">Search</button>
+</form>
+<hr>
+{% if "articles" %}
+
+<ul class="list-group">
+    
+{% for article in articles  %}
+    <li class="list-group-item"><a href="article/{{article.id}}">{{article.title}}</a></li>
+</ul>
+
+{% endfor %}
+
+
+{% else %}
+  
+<div class = "alert alert-message-danger"> You don't have any article.</div>
+
+
+
+{% endif %}
+
+  
+{% endblock body %}
+
